@@ -55,8 +55,11 @@
         
         
         
-        #section1st li { float:left; width:calc((1000px - 60px) / 4); }
+        #section1st li { float:left; width:calc((1000px - 60px) / 4); position: relative; overflow: hidden; margin-bottom: 20px; }
+        #section1st li:nth-child(1),  #section1st li:nth-child(4), #section1st li:nth-child(6), #section1st li:nth-child(7) { border-radius:0 70% 0 70%; }
+        #section1st li:nth-child(2),  #section1st li:nth-child(3), #section1st li:nth-child(5), #section1st li:nth-child(8) { border-radius:70% 0 70% 0 ; }
         #section1st li + li { margin-left: 20px; }
+        #section1st li:nth-child(5) { margin-left: 0;}
         #section1st h2, #section1st p { text-align: center; }
         #section1st h2:after { 
             content:"";
@@ -68,16 +71,19 @@
         }
         #section1st p { margin-bottom: 20px; }
         #section1st .overlay {
-            background:skyblue;
+            background:rgba(60, 132, 177, 0.7);
             height: 100%; width: 100%;
             position: absolute;
-            text-align: center;
-            line-height: 235px;
             transition:all 0.3s;
-            top: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            top: -100%;
+            left: -100%;
         }
         #section1st li:hover .overlay { 
-            top: 0;  opacity: 0.5;
+            top: 0; left: 0;
         }
         
         #section2st li { float:left; width:calc((1000px - 60px) / 4); }
@@ -131,6 +137,34 @@
             <h2>GALLERY</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, beatae!</p>       
             <ul class="clearfix">
+                <li>
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP</div>
+                </li>
+                <li>
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP</div>
+                </li>
+                <li>
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP</div>
+                </li>
+                <li>
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP</div>
+                </li>
+                <li>
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP</div>
+                </li>
+                <li>
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP</div>
+                </li>
+                <li>
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="overlay">TOP</div>
+                </li>
                 <li>
                     <img src="../images/testimg.jpg" alt="">
                     <div class="overlay">TOP</div>
