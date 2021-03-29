@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/jquery.bxslider.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".slider").bxSlider({
+                auto:true,
+                controls:false
+            });
+        });
+    </script>
 </head>
 <body>
     <header id="header">
@@ -56,8 +64,37 @@
         </div>
     </header>
     <div class="content">
-        <div class="section">
-            
+        <div class="titleWrap clearfix">
+           <div class="titleTxt">
+               <h3>함께 나누며 세상을 이끌어</h3>
+               <h2>세계로향하는 한국대학교</h2>
+           </div>
+           <ul class="titleMenu">
+               <li><a href="#"><img src="images/icon_01.png" alt=""><p>입학절차안내</p></a></li>
+               <li><a href="#"><img src="images/icon_02.png" alt=""><p>입학설명회</p></a></li>
+               <li><a href="#"><img src="images/icon_03.png" alt=""><p>장학제도</p></a></li>
+               <li><a href="#"><img src="images/icon_04.png" alt=""><p>증명서발급</p></a></li>
+           </ul>
+        </div>
+        <div class="container">
+            <ul>
+                <li>
+                    <div class="sliderWrap">
+                        <ul class="slider">
+                            <li><img src="images/main_slider.jpg" alt=""></li>
+                            <li><img src="images/main_slider.jpg" alt=""></li>
+                            <li><img src="images/main_slider.jpg" alt=""></li>
+                        </ul>
+                    </div>
+                </li> <!--75%-->
+                <li>02</li> <!--25%-->
+                <li>03</li> <!--25%-->
+                <li>04</li> <!--25%-->
+                <li>05</li> <!--25%-->
+                <li>06</li> <!--25%-->
+                <li>07</li> <!--25%-->
+                <li>08</li> <!--75%-->
+            </ul>
         </div>
     </div>
 </body>
