@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jqueryPractice</title>
+  <link rel="stylesheet" href="../../css/reset.css">
+  <script src="../../js/jquery-3.1.1.min.js"></script>
+  <style>
+    .gnb {width: 1000px; margin: 0 auto;}
+    .gnb li {float: left; width: 200px; text-align: center; line-height: 40px;}
+    .boxWrap { width: 1000px; margin: 0 auto;border: 1px solid #000; padding: 10px;}
+  </style>
+</head>
+<body>
+  <div class="gnb">
+    <ul class="clearfix">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
+      <li>menu5</li>
+    </ul>
+  </div>
+  <div class="boxWrap">
+    <div class="box1">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus quod reprehenderit minus unde quos cumque nobis ea nam perspiciatis sunt.</div>
+    <div class="box2">2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quaerat deserunt unde maiores perferendis, id iste cumque totam reprehenderit maxime.</div>
+    <div class="box3">3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quo repellendus officia. Quos magni reiciendis possimus fugiat, labore minus sit!</div>
+    <div class="box4">4. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nemo in quam, ipsam molestiae praesentium suscipit ab cum assumenda ipsa.</div>
+    <div class="box5">5. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum officiis vitae ex necessitatibus expedita, delectus laudantium amet, impedit eaque aut.</div>
+  </div>
+
+  <script>
+    $(".boxWrap>div").hide().eq(0).fadeIn(1000);
+    $(".gnb>ul>li").click(function(){
+      $(".gnb>ul>li").css("background","white");
+      $(this).css("background","skyblue");
+
+      $(".boxWrap>div").hide().eq($(this).index()).fadeIn(1000);
+    });
+  </script>
+</body>
+</html>
