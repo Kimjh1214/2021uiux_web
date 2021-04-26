@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>img_scroll</title>
+  <link rel="stylesheet" href="../../css/reset.css">
+  <script src="../../js/jquery-3.1.1.min.js"></script>
+  <script src="scroll.js"></script>
+  <style>
+    #scroll_gallery {
+      width: 824px; margin: 0 auto;
+      background: #eee; padding-top:30px;
+      box-shadow: 0 2px 2px #000;
+     }
+    #scroll_gallery img {display: block;}
+    #img { width: 760px; margin: 0 auto;}
+    #img p:first-child {display: block;}
+    #img p { display: none;}
+
+    #thumbnail {width: 824px; }
+    #thumbnail div {float: left;}
+    #thumbnail div.left,
+    #thumbnail div.right {
+      width: 32px; height: 95px; display: flex;
+      justify-content:center; align-items:center; cursor:pointer;
+    }
+    #thumbnail .thumb_container {
+      width: 760px; height: 95px; background: #eee;
+      padding-top: 10px;overflow: hidden;
+    }
+    #thumbnail .thumb_container ul {
+       width: 2280px; position: relative;
+     }
+    #thumbnail .thumb_container li {
+      float: left; width: 120px; margin-left: 8px;
+      cursor:pointer;
+    }
+    #thumbnail .thumb_container li:nth-child(6n+1) {
+      margin-left: 0 !important;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="scroll_gallery">
+    <div id="img">
+      <p><img src="images/0.jpg" alt=""></p>
+      <p><img src="images/1.jpg" alt=""></p>
+      <p><img src="images/2.jpg" alt=""></p>
+      <p><img src="images/3.jpg" alt=""></p>
+      <p><img src="images/4.jpg" alt=""></p>
+      <p><img src="images/5.jpg" alt=""></p>
+
+      <p><img src="images/6.jpg" alt=""></p>
+      <p><img src="images/7.jpg" alt=""></p>
+      <p><img src="images/8.jpg" alt=""></p>
+      <p><img src="images/9.jpg" alt=""></p>
+      <p><img src="images/10.jpg" alt=""></p>
+      <p><img src="images/11.jpg" alt=""></p>
+
+      <p><img src="images/12.jpg" alt=""></p>
+      <p><img src="images/13.jpg" alt=""></p>
+      <p><img src="images/14.jpg" alt=""></p>
+      <p><img src="images/15.jpg" alt=""></p>
+      <p><img src="images/16.jpg" alt=""></p>
+      <p><img src="images/17.jpg" alt=""></p>
+    </div> <!--img -->
+    <div id="thumbnail" class="clearfix">
+      <div class="left"><img src="images/btn_left.gif" alt=""></div>
+      <div class="thumb_container">
+        <ul class="clearfix">
+          <li><img src="images/thumb0.jpg" alt=""></li>
+          <li><img src="images/thumb1.jpg" alt=""></li>
+          <li><img src="images/thumb2.jpg" alt=""></li>
+          <li><img src="images/thumb3.jpg" alt=""></li>
+          <li><img src="images/thumb4.jpg" alt=""></li>
+          <li><img src="images/thumb5.jpg" alt=""></li>
+
+          <li><img src="images/thumb6.jpg" alt=""></li>
+          <li><img src="images/thumb7.jpg" alt=""></li>
+          <li><img src="images/thumb8.jpg" alt=""></li>
+          <li><img src="images/thumb9.jpg" alt=""></li>
+          <li><img src="images/thumb10.jpg" alt=""></li>
+          <li><img src="images/thumb11.jpg" alt=""></li>
+
+          <li><img src="images/thumb12.jpg" alt=""></li>
+          <li><img src="images/thumb13.jpg" alt=""></li>
+          <li><img src="images/thumb14.jpg" alt=""></li>
+          <li><img src="images/thumb15.jpg" alt=""></li>
+          <li><img src="images/thumb16.jpg" alt=""></li>
+          <li><img src="images/thumb17.jpg" alt=""></li>
+        </ul>
+      </div> <!--thumb-container-->
+      <div class="right"><img src="images/btn_right.gif" alt=""></div>
+    </div> <!--thumbnail-->
+  </div> <!--scroll_gallery-->
+</body>
+</html>
