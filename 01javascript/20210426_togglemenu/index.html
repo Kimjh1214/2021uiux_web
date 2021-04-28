@@ -34,24 +34,84 @@
     .toggleMenu.change .bar3 {
       left: 50%; top: 50%; transform:translate(-50%, -50%) rotate(45deg);
     }
+
+    .menuWrap{
+      width: 1200px; height: 100px; background:pink; margin: 0 auto;
+      position: relative;
+    }
+    .menuwrap h1 {
+      background:skyblue; width: 100px; text-align: center; height: 50px;
+    }
+    #myTopMenu {position: absolute; left: 100px; top: 0;}
+    #myTopMenu {display: block; float:  padding: 14px 10px;}
+    .content {width: 1200px; margin: 0 auto;}
+
+    @media screen and (min-width:575px){
+      body{background:green;}
+      .menuWrap{width: 100%;}
+      .toggleMenu{display: block;}
+      #myTopMenu{
+        position: fixed;width: 100%;height: 100%;
+        background: orange; left: 0; top: -100%;
+        display: flex;justify-content: center; align-items:center;
+        transition:.3s
+      }
+      .topNav{background:green; width: 50%;}
+      .topNav a{float:initial !important; text-align: center;}
+      .content {width: 100%;padding: 20px;}
+    }
+
+    @media screen and (min-width:576px) and (max-width:991px){
+      body{background:skyblue;}
+      .menuwrap{width: 100%;}
+      #myTopMenu{left: initial; right: 0;}
+    .content{width: 100%; padding: 20px;}
+    }
+
+    @media screen and (min-width:992px){
+      .menuWrap{position: fixed;left: 50%; transform: translateX(-50%);}
+      .content{padding-top: 70px;}
+    }
   </style>
 </head>
 <body>
-  <div class="toggleMenu" onclick="btn(this)"> <!--v-bind:class-->
+  <div class="menuWrap">
+    <h1>logo</h1>
+    <div id="myTopMenu">
+      <nav class="topNav clearfix">
+        <a href="#">HOME</a>
+        <a href="#">NEWS</a>
+        <a href="#">CONTACT</a>
+        <a href="#">PRODUCT</a>
+      </nav>
+    </div>
+  </div>
+  <div class="toggleMenu"> <!--v-bind:class-->
     <div class="bar1"></div>
     <div class="bar2"></div>
     <div class="bar3"></div>
   </div>
+  <div class="content">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dignissimos ullam delectus vero ipsum voluptatum voluptate quis nisi vel aliquid!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quia rem necessitatibus nostrum reiciendis nemo molestiae saepe accusantium! Maxime distinctio, suscipit fugiat voluptatum! Quia, illo! Ad inventore perferendis provident vero.
+  </div>
   <script>
-    // $(".toggleMenu").click(function(){
-    //   const toggle = $(".toggleMenu").attr("class"); //get
-    //
-    //   if(toggle == "toggleMenu"){
-    //     $(".toggleMenu").addClass("change");
-    //   }else{
-    //     $(".toggleMenu").removeClass("change");
-    //   }
-    // });
+    $(".toggleMenu").click(function(){
+      const toggle = $(".toggleMenu").attr("class"); //get
+
+      if(toggle == "toggleMenu"){
+        $(".toggleMenu").addClass("change");
+        $("#myTopMenu").stop().animate({top:0});
+      }else{
+        $(".toggleMenu").removeClass("change");
+        $("#myTopMenu").stop().animate({top:"-100%"});
+      }
+    });
+
+    $(window).resize(function(){
+      $("#myTopMenu").removeAttr("style");
+      $(".toggleMenu").removeClass("change");
+    });
 
     // const toggle = document.querySelector(".toggleMenu");
     // toggle.addEventListener("click",function(){
@@ -63,15 +123,15 @@
     //     toggle.classList.remove("change");
     //   }
     // });
-    function btn(obj){
-      const btn_toggle = obj.getAttribute("class");
-      console.log(btn_toggle);
-      if(btn_toggle == "toggleMenu"){
-        obj.classList.add("change");
-      }else{
-        obj.classList.remove("change");
-      }
-    }
+    // function btn(obj){
+    //   const btn_toggle = obj.getAttribute("class");
+    //   console.log(btn_toggle);
+    //   if(btn_toggle == "toggleMenu"){
+    //     obj.classList.add("change");
+    //   }else{
+    //     obj.classList.remove("change");
+    //   }
+    // }
   </script>
 
 
