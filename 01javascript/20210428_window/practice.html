@@ -13,9 +13,16 @@
     let num = 1;
     const img = document.getElementById("imgInterval");
     let timeId = setInterval("doRotate()",300);
-
+    let i = 0;
     function stop(){
-      clearInterval(timeId);
+      if(i == 0){
+        clearInterval(timeId);
+        i = 1;
+      }else{
+        i = 0;
+        timeId = setInterval("doRotate()",300);
+      }
+
     }
 
 
