@@ -13,35 +13,62 @@
       const banCount = banner.length;
       let current = 0;
       let i = 0;
+      let overBtn = false;
+      let timeId = 0;
       $(".next").click(function(){
-        i = current + 1;
-        if(i==banCount){
-          i=0;
+        if(overBtn == false){
+          overBtn = true;
+          i = current + 1;
+          if(i==banCount){
+            i=0;
+          }
+          banner.eq(current).css({left:0}).stop().animate({left:"-100%"},1000);
+          banner.eq(i).css({left:"100%"}).stop()
+          .animate({left:0},{
+            duration:1000,
+            complete:function(){
+              overBtn = false
+            }
+          });
+          console.log("현재위치: "+current+", 다음위치: "+i);
+          current = i;
         }
-        banner.eq(current).css({left:0}).stop().animate({left:"-100%"},1000);
-        banner.eq(i).css({left:"100%"}).stop().animate({left:0},1000);
-        console.log("현재위치: "+current+", 다음위치: "+i);
-        current = i;
       });
       $(".prev").click(function(){
-        i = current - 1;
-        if(i==-1){
-          i=4;
+        if(overBtn == false){
+          overBtn = true;
+          i = current - 1;
+          if(i==-1){
+            i=4;
+          }
+          banner.eq(current).css({left:0}).stop().animate({left:"100%"},1000);
+          banner.eq(i).css({left:"-100%"}).stop()
+          .animate({
+            left:0},{
+            duration:1000,
+            complete:function(){
+              overBtn = false
+            }
+          });
+          console.log("현재위치: "+current+", 다음위치: "+i);
+          current = i;
         }
-        banner.eq(current).css({left:0}).stop().animate({left:"100%"},1000);
-        banner.eq(i).css({left:"-100%"}).stop().animate({left:0},1000);
-        console.log("현재위치: "+current+", 다음위치: "+i);
-        current = i;
       });
-
-
-
-
-
-
-
-
-
+      function trigger(){
+        $(".next").trigger("click");
+      }
+      $(".run").click(function(){
+        if(timeId==0){
+          start();
+        }else{
+          clearInterval(timeId);
+          timeId=0;
+        }
+      });
+      function start(){
+        timeId = setInterval(trigger,3000);
+      }
+      start();
     });
   </script>
   <style>
