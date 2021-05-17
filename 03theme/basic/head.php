@@ -29,7 +29,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     <div id="hd_wrapper">
 
         <div id="logo">
-            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_THEME_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
 
 
@@ -144,13 +144,6 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 
 <hr>
-<!-- <? if(defined('_INDEX_')){
-  echo "<img src='".G5_THEME_IMG_URL."/pc01.jpg'>";
-}?>
-
-<? if(defined('_INDEX_')){?>
-  <img src="<? echo G5_THEME_IMG_URL ?>/pc01.jpg" alt="">
-<?}?> -->
 
 <?php if(defined('_INDEX_')) { ?>
 <div class="slider">
@@ -175,9 +168,39 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 </script>
 <?php } ?>
 
+<? if(!defined('_INDEX_')){?>
+  <div class="subVisual">
+    <div class="subImg" id="page_title">
+      <div class="title">
+        <h2 class="loc1D"></h2>
+        <div class="txt">안녕하세요</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.onload = function(){
+      const menuDep = $(".loc1D").html(); //get
+      console.log("현재위치 :" + menuDep);
+      if(menuDep == "회사소개"){
+        $(".txt").html("저희 홈페이지를 찾아주셔서 감사합니다.");
+        if(menuDep == "제품소개"){
+          $(".txt").html("제품소개입니다.");
+      }
+      }else{
+        $(".txt").html("자유롭게 커뮤니티하실수 있는 곳입니다.");
+      }
+    }
+  </script>
+<? }?>
+
 <!-- 콘텐츠 시작 { -->
 <div id="wrapper">
     <div id="container_wr">
 
     <div id="container" <?php if(defined('_INDEX_')){?>style="width:1200px"<?}?>>
-        <?php if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php }?>
+        <?php if (!defined("_INDEX_")) { ?>
+
+        <!-- location   -->
+        <div>H > <span class="loc1D"></span> > <?php echo get_text($g5['title']); ?></div>
+
+        <h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php }?>
