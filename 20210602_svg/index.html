@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* svg {
+      background:skyblue;
+      stroke:#000;
+      stroke-width:4;
+      fill:#fff;
+    } */
+
+    .box {width: 200px; height: 200px;}
+    .box1 {width: 400px; height: 400px; background-image:url(star.svg);}
+    .box2 {
+      width: 400px; height: 400px;
+      display:flex; justify-content:center; align-items:center;
+      border: 1px solid #000;
+    }
+    .st0{
+      fill:#fff;stroke:#f00;
+      stroke-width:5;
+      stroke-dasharray:600;
+      stroke-dashoffset:600;
+      stroke-linecap:round;
+    }
+
+    @keyframes starAni {
+      from {storke-dashoffset:600; fill:#fff;}
+      to{stroke-dashoffset:0; fill:#0f0;}
+    }
+    .box2:hover .st0{
+      animation:starAni 2s infinite alternate;
+    }
+  </style>
+  <style>
+
+  </style>
+</head>
+<body>
+  <!-- <svg width="100" height="100">
+    <circle cx="50" cy="50" r="40">
+  </svg> -->
+
+  <div class="box">
+    <img src="star.svg" alt="">
+  </div>
+
+  <div class="box1">
+
+  </div>
+
+  <div class="box2">
+    <svg width="200" height="200">
+      <polyline class="st0" points="99.1,29.6 115.2,79 173.9,79 126.4,113.5 144.6,169.5 97,134.9 49.4,169.5 67.6,113.5 20.1,79
+	78.8,79 97,23.1 99.1,29.6 "/>
+
+    </svg>
+  </div>
+
+
+
+</body>
+</html>
